@@ -25,6 +25,10 @@
 #import "Path.h"
 #import "UntrackedPeriod.h"
 
+#import "DBScan.h"
+#import "CPoint.h"
+#import "EuclidianDistanceFunction.h"
+
 NSString *DataProcessorDidFinishProcessingNotification = @"DataProcessorDidFinishProcessingNotification";
 
 @interface DataProcessor ()
@@ -146,12 +150,8 @@ NSString *DataProcessorDidFinishProcessingNotification = @"DataProcessorDidFinis
                 [self removeAllProcessedDataWithPredicate:deletePredicate inContext:localContext];
             }
             
-            NSArray *locationArray = [RawLocation MR_findAllSortedBy:@"timestamp" ascending:YES withPredicate:predicate inContext:localContext];
+            NSArray *array = [RawLocation MR_findAllSortedBy:@"timestamp" ascending:YES withPredicate:predicate inContext:localContext];
 
-            NSArray *motionArray = [RawMotionActivity MR_findAllSortedBy:@"timestamp" ascending:YES withPredicate:predicate inContext:localContext];
-
-            NSArray *array = [locationArray arrayByAddingObjectsFromArray:motionArray];
-            
             [self processArray:array previousEvent:previousEvent withContext:localContext];
         }];
 
@@ -166,9 +166,6 @@ NSString *DataProcessorDidFinishProcessingNotification = @"DataProcessorDidFinis
         [self removeAllProcessedDataWithContext:localContext];
 
         NSArray *array = [RawLocation MR_findAllSortedBy:@"timestamp" ascending:YES inContext:localContext];
-        array = [array arrayByAddingObjectsFromArray:
-                 [RawMotionActivity MR_findAllSortedBy:@"timestamp" ascending:YES inContext:localContext]];
-
         [self processArray:array withContext:localContext];
 
     } completion:^(BOOL success, NSError *error) {
@@ -226,9 +223,32 @@ NSString *DataProcessorDidFinishProcessingNotification = @"DataProcessorDidFinis
 }
 
 - (void)processArray:(NSArray *)array previousEvent:(TimedEvent *)previousObject withContext:(NSManagedObjectContext *)localContext {
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:YES];
-    array = [array sortedArrayUsingDescriptors:@[descriptor]];
 
+    NSMutableArray *locations = [[NSMutableArray alloc] initWithCapacity:array.count];
+    for (RawLocation *location in array) {
+        CPoint *point = [CPoint new];
+        [point addCoordinate:location.latitude];
+        [point addCoordinate:location.longitude];
+        [locations addObject:point];
+    }
+
+    NSLog(@"number of loaded points: %i", (int)locations.count);
+
+    NSDate *startTime = [NSDate date];
+    NSLog(@"start clustering process (%@)", startTime);
+
+    NSArray *clusters = [[[DBScan alloc] initWithPoints:locations epsilon:0.2f minNumberOfPointsInCluster:2 distanceFunction:[EuclidianDistanceFunction new]] clusters];
+
+    NSDate *endTime = [NSDate date];
+    NSLog(@"finished clustering process (%@)", endTime);
+
+    NSTimeInterval totalProcessingTimeInSeconds = [endTime timeIntervalSinceDate:startTime];
+
+    NSLog(@"total processing time: %fs", totalProcessingTimeInSeconds);
+    NSLog(@"================> %@", clusters);
+
+
+    /*
     RawMotionActivity *previousActivity;
 
     NSMutableArray *stops = [NSMutableArray new];
@@ -357,6 +377,7 @@ NSString *DataProcessorDidFinishProcessingNotification = @"DataProcessorDidFinis
         previousObj = obj;
     }
     [allObjects removeObjectsInArray:objectsToRemove];
+ */
 }
 
 @end

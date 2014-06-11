@@ -67,6 +67,11 @@
 		A6806ACD1932170A00B2B0F3 /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = A6806ACC1932170A00B2B0F3 /* Stop.m */; };
 		A68425CA192302CB0083D006 /* FoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = A68425C9192302CB0083D006 /* FoursquareVenue.m */; };
 		A68425CC1923047F0083D006 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = A68425CB1923047F0083D006 /* Configuration.plist */; };
+		A6966FD41947C34B002E4FC4 /* Cluster.m in Sources */ = {isa = PBXBuildFile; fileRef = A6966FC81947C34B002E4FC4 /* Cluster.m */; };
+		A6966FD51947C34B002E4FC4 /* CPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = A6966FCA1947C34B002E4FC4 /* CPoint.m */; };
+		A6966FD61947C34B002E4FC4 /* DBScan.m in Sources */ = {isa = PBXBuildFile; fileRef = A6966FCC1947C34B002E4FC4 /* DBScan.m */; };
+		A6966FD71947C34B002E4FC4 /* EuclidianDistanceFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = A6966FCF1947C34B002E4FC4 /* EuclidianDistanceFunction.m */; };
+		A6966FD81947C34B002E4FC4 /* FileSourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A6966FD11947C34B002E4FC4 /* FileSourceLoader.m */; };
 		A6A874E31932270000D8C7DD /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A874E21932270000D8C7DD /* Path.m */; };
 		A6A874E61932294900D8C7DD /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A874E51932294900D8C7DD /* Venue.m */; };
 		A6A874E919322E7400D8C7DD /* UntrackedPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A874E819322E7400D8C7DD /* UntrackedPeriod.m */; };
@@ -168,6 +173,18 @@
 		A68425C8192302CB0083D006 /* FoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FoursquareVenue.h; path = Models/FoursquareVenue.h; sourceTree = "<group>"; };
 		A68425C9192302CB0083D006 /* FoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FoursquareVenue.m; path = Models/FoursquareVenue.m; sourceTree = "<group>"; };
 		A68425CB1923047F0083D006 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = ../Configuration.plist; sourceTree = "<group>"; };
+		A6966FC71947C34B002E4FC4 /* Cluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cluster.h; sourceTree = "<group>"; };
+		A6966FC81947C34B002E4FC4 /* Cluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cluster.m; sourceTree = "<group>"; };
+		A6966FC91947C34B002E4FC4 /* CPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPoint.h; sourceTree = "<group>"; };
+		A6966FCA1947C34B002E4FC4 /* CPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPoint.m; sourceTree = "<group>"; };
+		A6966FCB1947C34B002E4FC4 /* DBScan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBScan.h; sourceTree = "<group>"; };
+		A6966FCC1947C34B002E4FC4 /* DBScan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBScan.m; sourceTree = "<group>"; };
+		A6966FCD1947C34B002E4FC4 /* DistanceFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceFunction.h; sourceTree = "<group>"; };
+		A6966FCE1947C34B002E4FC4 /* EuclidianDistanceFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EuclidianDistanceFunction.h; sourceTree = "<group>"; };
+		A6966FCF1947C34B002E4FC4 /* EuclidianDistanceFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EuclidianDistanceFunction.m; sourceTree = "<group>"; };
+		A6966FD01947C34B002E4FC4 /* FileSourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSourceLoader.h; sourceTree = "<group>"; };
+		A6966FD11947C34B002E4FC4 /* FileSourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSourceLoader.m; sourceTree = "<group>"; };
+		A6966FD31947C34B002E4FC4 /* SourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceLoader.h; sourceTree = "<group>"; };
 		A6A874E11932270000D8C7DD /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Path.h; path = Models/Path.h; sourceTree = "<group>"; };
 		A6A874E21932270000D8C7DD /* Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Path.m; path = Models/Path.m; sourceTree = "<group>"; };
 		A6A874E41932294900D8C7DD /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Venue.h; path = Models/Venue.h; sourceTree = "<group>"; };
@@ -293,6 +310,7 @@
 		A6748A92192127E90073CE19 = {
 			isa = PBXGroup;
 			children = (
+				A6966FC31947C2FC002E4FC4 /* Vendor */,
 				A644F0AC19366688009B7561 /* Pods-acknowledgements.plist */,
 				A66211651930507F00982704 /* Configuration.plist.example */,
 				A6748AA4192127E90073CE19 /* Theseus */,
@@ -465,6 +483,34 @@
 				A6A874FB1932355F00D8C7DD /* CDVenue.m */,
 			);
 			name = NSManagedObjects;
+			sourceTree = "<group>";
+		};
+		A6966FC31947C2FC002E4FC4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				A6966FC61947C34B002E4FC4 /* DBScan */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		A6966FC61947C34B002E4FC4 /* DBScan */ = {
+			isa = PBXGroup;
+			children = (
+				A6966FC71947C34B002E4FC4 /* Cluster.h */,
+				A6966FC81947C34B002E4FC4 /* Cluster.m */,
+				A6966FC91947C34B002E4FC4 /* CPoint.h */,
+				A6966FCA1947C34B002E4FC4 /* CPoint.m */,
+				A6966FCB1947C34B002E4FC4 /* DBScan.h */,
+				A6966FCC1947C34B002E4FC4 /* DBScan.m */,
+				A6966FCD1947C34B002E4FC4 /* DistanceFunction.h */,
+				A6966FCE1947C34B002E4FC4 /* EuclidianDistanceFunction.h */,
+				A6966FCF1947C34B002E4FC4 /* EuclidianDistanceFunction.m */,
+				A6966FD01947C34B002E4FC4 /* FileSourceLoader.h */,
+				A6966FD11947C34B002E4FC4 /* FileSourceLoader.m */,
+				A6966FD31947C34B002E4FC4 /* SourceLoader.h */,
+			);
+			name = DBScan;
+			path = Vendor/DBScan;
 			sourceTree = "<group>";
 		};
 		A6AAB14B19305F59000DE81E /* Categories */ = {
@@ -784,6 +830,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6A874E61932294900D8C7DD /* Venue.m in Sources */,
+				A6966FD81947C34B002E4FC4 /* FileSourceLoader.m in Sources */,
 				A6B91D03192E70BF00F7106E /* StopTimelineCell.m in Sources */,
 				A6A8750319323A0300D8C7DD /* TimedEvent.m in Sources */,
 				A6B91D08192E737200F7106E /* UITableViewCell+ReuseIdentifier.m in Sources */,
@@ -793,12 +840,14 @@
 				A6A874FE1932355F00D8C7DD /* CDRawMotionActivity.m in Sources */,
 				A654D889193904C400E5D0B6 /* StopAnnotation.m in Sources */,
 				A6107DCE19314B13003B7837 /* DataExporter.m in Sources */,
+				A6966FD61947C34B002E4FC4 /* DBScan.m in Sources */,
 				A6F4D9731922FE33006C7034 /* FoursquareClient.m in Sources */,
 				A6748AD7192128D70073CE19 /* LocationManager.m in Sources */,
 				A6BD97BA192A4B2900264548 /* VenueListViewController.m in Sources */,
 				A6806ACD1932170A00B2B0F3 /* Stop.m in Sources */,
 				A6C7CFF0192AAD2A001A6DAC /* Configuration.m in Sources */,
 				A6A874FD1932355F00D8C7DD /* CDRawLocation.m in Sources */,
+				A6966FD51947C34B002E4FC4 /* CPoint.m in Sources */,
 				A6A874EC193230C700D8C7DD /* RawLocation.m in Sources */,
 				A668A1F0193246ED00C6363F /* RawDataPoint.m in Sources */,
 				A6B91D19192FA98F00F7106E /* DaysAgoDataSource.m in Sources */,
@@ -808,6 +857,7 @@
 				A6A874FC1932355F00D8C7DD /* CDPath.m in Sources */,
 				A6F4D96F1922E9F5006C7034 /* ListViewController.m in Sources */,
 				A6748ADE1921344F0073CE19 /* MotionManager.m in Sources */,
+				A6966FD71947C34B002E4FC4 /* EuclidianDistanceFunction.m in Sources */,
 				A6748AB5192127E90073CE19 /* MapViewController.m in Sources */,
 				A6748AAF192127E90073CE19 /* AppDelegate.m in Sources */,
 				A6D7DFDA192417B20036C2DF /* DataProcessor.m in Sources */,
@@ -821,6 +871,7 @@
 				A6F4D9111922CF13006C7034 /* Theseus.xcdatamodeld in Sources */,
 				A6A874FF1932355F00D8C7DD /* CDStop.m in Sources */,
 				A6B91D11192E770C00F7106E /* UntrackedPeriodTimelineCell.m in Sources */,
+				A6966FD41947C34B002E4FC4 /* Cluster.m in Sources */,
 				A6A874EF1932331300D8C7DD /* RawMotionActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
